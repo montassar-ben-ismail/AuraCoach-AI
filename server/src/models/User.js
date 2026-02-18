@@ -13,6 +13,14 @@ const userSchema=new mongoose.Schema({
         type:String,
         required:true,
     },
+    googleId:{
+        type:String,
+        required:false
+    },
+    estPro:{
+        type:Boolean,
+        required:false,
+    },
     role: {
         type: String,
         required:true

@@ -19,12 +19,11 @@ export const login=async(req,res)=>{
         }
         //utilisateur exite et le mot de passe correct
         const token=jwt.sign(
-            {id:user._id},process.env.JWT_SECRET,{expiresIn:"7d"});
+            {id:user._id, role:user.role},process.env.JWT_SECRET,{expiresIn:"7d"});
         //reponse
-         res.status(200).json({
+        res.status(200).json({
             message:"Connexion réussie",
-            token,
-            user:{email:user.email,role:user.role},
+            token
             });
     }catch(err){
         res.status(500).json({message:err.message});
