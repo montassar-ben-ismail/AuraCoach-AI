@@ -5,6 +5,7 @@ import addExRoutes from"./src/routes/addEx.routes.js";
 import setTrainningPlanRoutes from "./src/routes/setTrainningPlan.routes.js"
 import getTrainningPlanRoutes from "./src/routes/getTrainningPlan.routes.js"
 import setMetriquePhysique from "./src/routes/setMetriquePhysique.routes.js"
+import getMetriquePhysique from "./src/routes/getMetriquePhysique.routes.js"
 const app=express();
 
 app.use(express.json());
@@ -14,4 +15,5 @@ app.use(("/",addExRoutes))
 app.use(("/",setTrainningPlanRoutes))
 app.use(("/",getTrainningPlanRoutes))
 app.use(("/",setMetriquePhysique))
+app.use(("/",getMetriquePhysique))
 export default app;
